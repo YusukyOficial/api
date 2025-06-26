@@ -1,6 +1,7 @@
 const express = require('express');
 const Empresas = require('../models/Empresas');
 const Servicoes = require('../models/servicoes');
+const UsuarioController = require('../controller/UsuarioController');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -26,5 +27,7 @@ router.get('/servicoes', (req, res) => {
         "servicoes": Servicoes
     })
 })
+
+router.post('/login', UsuarioController.login);
 
 module.exports = router;
